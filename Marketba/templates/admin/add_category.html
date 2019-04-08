@@ -1,0 +1,36 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+  
+
+
+
+{% block content %}
+
+  <div id="main">
+  <form method="POST" action="">
+    {% csrf_token %}
+  <table id="registrationTable">
+    <tr>
+      <td><h2>Add Category</h2></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="Category" id="txtName" name="category"></td>
+    </tr>
+    
+    <tr>      
+     
+      
+      <td>
+        <button id="btnRegister">Submit</button>
+              
+      </td>
+    </tr>
+  </table>
+</form>
+</div>
+
+{% endblock %}
+  
+
+

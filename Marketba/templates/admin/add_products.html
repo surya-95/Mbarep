@@ -1,0 +1,49 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div id="main">
+    <form method="POST" action="">
+      {% csrf_token %}
+  <table id="registrationTable">
+    <tr>
+      <td><h2>Add Products</h2></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="Product name" id="txtPname" name="pname"></td>
+    </tr>
+    <tr>      
+      <td><select name="category">
+      	<option>Select your Category</option>
+      	<option>SoftDrinks</option>
+      	<option>Snacks</option>
+      	<option>Vegetables</option>
+      	<option>Fruits</option>
+      	<option>Beauty Products</option>
+      	<option>Crocery</option>
+      	<option>Stationary</option>
+      </select></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="Quantity" id="txtQuantity" name="quantity"></td>
+    </tr>
+    <tr>      
+      <td><input type="number" placeholder="Price" id="txtPrice" name="price"></td>
+    </tr>
+    <tr>      
+     
+      
+      <td>
+        <button id="btnRegister">ADD products</button>
+              
+      </td>
+    </tr>
+  </table>
+</form>
+</div>
+
+{% endblock %}
+  
+
+
