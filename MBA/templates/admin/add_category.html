@@ -1,0 +1,45 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+  
+
+
+
+{% block content %}
+<!-- <script type="text/javascript">
+        setTimeout(function() {
+          $('#err').fadeOut('slow');
+          $('#suc').fadeOut('slow');
+
+        }, 2000);
+          
+</script> -->
+<!-- <div style=" color:green ; font-size: 22px; margin-left:443px" id="err"><b>{{err}}</b></div>
+<div style=" color:green ; font-size: 22px; margin-left:443px" id="suc"><b>{{suc}}</b></div> -->
+  <div id="main">
+  <form method="POST" action="/admin/addcategory/">
+    {% csrf_token %}
+  <table id="registrationTable">
+    <tr>
+      <td><h2>Add Category</h2></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="Category" id="txtName" name="category" required></td>
+    </tr>
+    
+    <tr>      
+     
+      
+      <td>
+        <button id="btnRegister">Submit</button>
+              
+      </td>
+    </tr>
+  </table>
+</form>
+</div>
+
+{% endblock %}
+  
+
+

@@ -1,0 +1,38 @@
+{% extends 'staff/base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div id="main">
+  <form method="POST" action="">
+    {% csrf_token %}
+  <table id="registrationTable">
+    <tr>
+      <td><h2>Update Profile</h2></td>
+    </tr>
+    {% for x in data %}
+    <tr>      
+      <td><input type="text" placeholder="Name" id="txtName" name="name" value="{{x.name}}" required></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="Username" id="txtEmail" name="uname" value="{{x.uname}}" required></td>
+    </tr>
+    <tr>      
+      <td><input type="number" placeholder="Phone No" id="txtPhno" name="phno" value="{{x.number}}" required></td>
+    </tr>
+    {% endfor %}
+    <tr>      
+     
+      
+      <td>
+        <button id="btnRegister">Update</button>
+              
+      </td>
+    </tr>
+  </table>
+</form>
+</div>
+
+{% endblock %}
+
+ 

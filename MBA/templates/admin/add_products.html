@@ -1,0 +1,57 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- <script type="text/javascript">
+        setTimeout(function() {
+          $('#err').fadeOut('slow');
+          $('#suc').fadeOut('slow');
+
+        }, 2000);
+          
+</script> --><!-- 
+<div style=" color:green ; font-size: 22px; margin-left:443px" id="err"><b>{{err}}</b></div>
+<div style=" color:green ; font-size: 22px; margin-left:443px" id="suc"><b>{{suc}}</b></div> -->
+
+  <div id="main">
+    <form method="POST" action="/admin/addprod/">
+      {% csrf_token %}
+  <table id="registrationTable">
+    <tr>
+      <td><h2>Add Products</h2></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="Product name" id="txtPname" name="pname" required></td>
+    </tr>
+    <tr> 
+     
+      <td><select name="category" required>
+
+      	<option>Select your Category</option>
+         {% for x in data %}   
+      	<option>{{x.category}}</option>
+      {% endfor %}
+      </select></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="Quantity" id="txtQuantity" name="quantity" required></td>
+    </tr>
+    <tr>      
+      <td><input type="number" placeholder="Price" id="txtPrice" name="price" required></td>
+    </tr>
+    <tr>      
+     
+      
+      <td>
+        <button id="btnRegister">ADD products</button>
+              
+      </td>
+    </tr>
+  </table>
+</form>
+</div>
+
+{% endblock %}
+  
+
+

@@ -1,0 +1,48 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- <script type="text/javascript">
+        setTimeout(function() {
+          $('#err').fadeOut('slow');
+          $('#suc').fadeOut('slow');
+
+        }, 2000);
+          
+</script> --><!-- 
+<div style=" color:green ; font-size: 22px; margin-left:443px" id="err"><b>{{err}}</b></div>
+<div style=" color:green ; font-size: 22px; margin-left:443px" id="suc"><b>{{suc}}</b></div> -->
+  <div id="main">
+  <form method="POST" action="/admin/addstaff/">
+    {% csrf_token %}
+  <table id="registrationTable">
+    <tr>
+      <td><h2>Add Staff</h2></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="Name" id="txtName" name="name" required></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="Username" id="txtEmail" name="uname" required></td>
+    </tr>
+    <tr>      
+      <td><input type="number" placeholder="Phone No" id="txtPhno" name="phno" required></td>
+    </tr>
+    <tr>      
+      <td><input type="password" placeholder="Password" id="Password" name="password" required></td>
+    </tr>
+    <tr>      
+     
+      
+      <td>
+        <button id="btnRegister">Register</button>
+              
+      </td>
+    </tr>
+  </table>
+</form>
+</div>
+
+{% endblock %}
+
+ 
