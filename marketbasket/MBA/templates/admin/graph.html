@@ -1,0 +1,44 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 137.33%;
+  padding: 84px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+<div class="row">
+  <div class="column">
+    <img src="{% static "/images/c1.png" %}" alt="fig1" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{% static "/images/c2.png" %}" alt="fig2" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{% static "/images/c3.png" %}" alt="fig3" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{% static "/images/c4.png" %}" alt="fig3" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{% static "/images/c5.png" %}" alt="fig3" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="{% static "/images/c6.png" %}" alt="fig3" style="width:100%">
+  </div>
+</div>
+
+{% endblock %}

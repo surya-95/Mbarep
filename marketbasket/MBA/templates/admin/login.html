@@ -1,0 +1,67 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Market basket Analysis</title>
+  
+  
+  <link rel='stylesheet' href='https://code.getmdl.io/1.3.0/material.indigo-pink.min.css'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Comfortaa'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+
+      <link rel="stylesheet" href="{% static "css/style.css" %}">
+<script type="text/javascript">
+        setTimeout(function() {
+          $('#err').fadeOut('slow');
+          $('#suc').fadeOut('slow');
+
+        }, 2000);
+          
+</script>
+  
+</head>
+
+<body>
+<div style=" color:green ; font-size: 22px; margin-left:443px" id="err"><b>{{err}}</b></div>
+<div style=" color:green ; font-size: 22px; margin-left:443px" id="suc"><b>{{suc}}</b></div>
+  <div id="main">
+  <form method="POST" action="/admin/login/">
+  	{% csrf_token %}
+  <table id="registrationTable">
+    <tr>
+      <td><h2>Login</h2></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="userame" id="txtName" name="uname" required></td>
+    </tr>
+    <tr>      
+      <td><input type="password" placeholder="Password" id="Password" name="password" required></td>
+    </tr>
+      <!-- <tr><td><a href="/staff/updatepaswd/">Forgot Password</a></td></tr> -->
+      <td>
+        <button id="btnRegister">Login</button>
+              
+      </td>
+    </tr>
+  </table>
+  </form>
+</div>
+
+
+  <script src='https://code.getmdl.io/1.3.0/material.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
+  
+
+    <script  src="{% static "js/index.js" %}"></script>
+
+
+
+
+</body>
+
+</html>

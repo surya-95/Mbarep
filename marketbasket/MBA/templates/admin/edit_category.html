@@ -1,0 +1,40 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+  
+
+
+
+{% block content %}
+
+  <div id="main">
+  <form method="POST" action="">
+    {% csrf_token %}
+  <table id="registrationTable">
+    <tr>
+      <td><h2>Edit Category</h2></td>
+    </tr>
+    {% for x in data%}
+    <tr>      
+      <td><input type="hidden" placeholder="Category" id="txtName" name="id" value="{{x.id}}" required></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="Category" id="txtName" name="category" value="{{x.category}}" required></td>
+    </tr>
+    {% endfor %}
+    <tr>      
+     
+      
+      <td>
+        <button id="btnRegister">edit</button>
+              
+      </td>
+    </tr>
+  </table>
+</form>
+</div>
+
+{% endblock %}
+  
+
+

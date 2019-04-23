@@ -1,0 +1,54 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>mba</title>
+  
+  
+  
+      <link rel="stylesheet" href="{% static "css/tabss/style.css" %}">
+<script type="text/javascript">
+        setTimeout(function() {
+          
+          $('#suc').fadeOut('slow');
+
+        }, 2000);
+          
+</script>
+
+</head>
+
+<body>
+<div style=" color:green ; font-size: 22px; margin-left:443px" id="suc"><b>{{suc}}</b></div>
+  
+  <table>
+  <thead>
+    <tr>
+      
+      <th>Category</th>
+      <th>Edit</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in data %}
+    <tr>
+      
+      <td>{{x.category}}</td>
+      
+      <td><a href="/admin/editcategory/?id={{x.id}}">Edit</a> </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+  
+  
+
+</body>
+
+</html>
+{% endblock %}

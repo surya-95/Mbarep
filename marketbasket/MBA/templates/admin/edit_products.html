@@ -1,0 +1,65 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <div id="main">
+    <form method="POST" action="/admin/editprod/">
+      {% csrf_token %}
+  <table id="registrationTable">
+    <tr>
+      <td><h2>Edit Products</h2></td>
+    </tr>
+    {% for x in data %}
+    <tr>      
+      <td><input type="hidden"  id="txtPname" name="id" value="{{x.id}}" ></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="Product name" id="txtPname" name="pname" value="{{x.pname}}" required ></td>
+    </tr>
+    <tr> 
+     
+      <td><select name="category" required>
+         <option {% if x.category == '{{x.category}}' %} selected {% endif %}>{{x.category}}</option>
+      	<option>Select your Category</option>
+
+         {% for x in cat %}   
+      	<option>{{x.category}}</option>
+        {% endfor %}
+      </select></td>
+    </tr>
+    <tr>      
+      <td><input type="text" placeholder="Quantity" id="txtQuantity" name="quantity" value="{{x.quantity}}" required></td>
+    </tr>
+    <tr>
+    <td><textarea name="desc">{{x.desc}}</textarea></td>
+    </tr>
+    <tr>      
+      <td><input  placeholder="MFD" id="txted" name="mfd" onfocus="(this.type='date')" value="{{x.mfd}}" required></td>
+    </tr>
+    <tr>      
+      <td><input placeholder="Exp.date" id="txted" name="exd" onfocus="(this.type='date')" value="{{x.exd}}"  required></td>
+    </tr>
+    <tr>      
+      <td><input type="number" placeholder="Price" id="txtPrice" name="price" value="{{x.amount}}" required></td>
+    </tr>
+    <tr>      
+      <td><input type="number" placeholder="GST" id="txtPrice" name="gst"value="{{x.gst}}" required></td>
+    </tr>
+    {% endfor %}
+    <tr>      
+     
+      
+      <td>
+        <button id="btnRegister">Edit products</button>
+              
+      </td>
+    </tr>
+  </table>
+</form>
+</div>
+
+{% endblock %}
+  
+
+

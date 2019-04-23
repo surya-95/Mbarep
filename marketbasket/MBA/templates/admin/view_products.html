@@ -1,0 +1,66 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>mba</title>
+  
+  
+  
+      <link rel="stylesheet" href="{% static "css/tabss/style.css" %}">
+<script type="text/javascript">
+        setTimeout(function() {
+         
+          $('#suc').fadeOut('slow');
+
+        }, 2000);
+          
+</script>
+
+</head>
+
+<body>
+<div style=" color:green ; font-size: 22px; margin-left:443px" id="suc"><b>{{suc}}</b></div>
+  
+  <table>
+  <thead>
+    <tr>
+      <th>Product name</th>
+      <th>Category</th>
+      <th>Quantity</th>
+      <th>Description</th>
+      <th>Manufacture Dtae</th>
+      <th>Expire Date</th>
+      <th>Price</th>
+      <th>GST</th>
+      <th>Total price</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in data %}
+    <tr>
+      <td>{{x.pname}}</td>
+      <td>{{x.category}}</td>
+      <td>{{x.quantity}}</td>
+      <td>{{x.desc}}</td>
+      <td>{{x.mfd}}</td>
+      <td>{{x.exd}}</td>
+      <td>{{x.amount}}</td>
+      <td>{{x.gst}}</td>
+      <td>{{x.price}}</td>
+      <td><a href="/admin/editprod/?id={{x.id}}">Edit</a> 
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+  
+  
+
+</body>
+
+</html>
+{% endblock %}

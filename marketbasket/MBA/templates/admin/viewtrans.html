@@ -1,0 +1,73 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>mba</title>
+  
+  
+  
+      <link rel="stylesheet" href="{% static "css/tabss/style.css" %}">
+<script type="text/javascript">
+        setTimeout(function() {
+         
+          $('#suc').fadeOut('slow');
+
+        }, 2000);
+          
+</script>
+
+</head>
+
+<body>
+<div style=" color:green ; font-size: 22px; margin-left:443px" id="suc"><b>{{suc}}</b></div>
+  
+  <table>
+  <thead>
+    <tr>
+      <th>Cutomer name</th>
+      <th>Customer ph</th>
+      
+      <th>Product name </th>
+      <th>Quantity</th>
+      
+      <th>Total Amount</th>
+      <th>Discount</th>
+      <th>Due</th>
+      <th>Grand total</th>
+      <th>Paid</th>
+      <th>Order date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for x in data %}
+     {% for y in dat %}
+    <tr>
+      <td>{{x.clientname}}</td>
+      <td>{{x.phone}}</td>
+     
+      <td>{{y.product}}</td>
+  
+      <td>{{x.quantity}}</td>
+      
+      <td>{{x.total}}</td>
+      <td>{{x.discout}}</td>
+      <td>{{x.due}}</td>
+      <td>{{x.grand}}</td>
+      <td>{{x.grand}}</td>
+      <td>{{x.orderdate}}</a> 
+    </tr>
+     {% endfor %}
+    {% endfor %}
+  </tbody>
+</table>
+  
+  
+
+</body>
+
+</html>
+{% endblock %}
